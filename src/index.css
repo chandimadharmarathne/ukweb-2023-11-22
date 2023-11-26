@@ -1,0 +1,131 @@
+:root {
+  --clr-primary: hsl(180, 53%, 35%);
+  --clr-secondary: hsl(142, 74%, 32%);
+  --clr-secondary-100: hsl(0, 0%, 90%);
+}
+body {
+  margin: 0;
+  padding: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: Ubuntu, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+.Mui-disabled {
+  cursor: not-allowed !important;
+}
+
+main {
+  
+  
+}
+
+.container {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+}
+.card{
+  flex-shrink: 0;
+  width: 300px;
+  height: 320px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container::-webkit-scrollbar{
+  width: 0px;
+}
+
+.card::-webkit-scrollbar{
+  width: 0px;
+}
+.galary-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto;
+
+}
+
+#leftArrow, #rightArrow{
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+}
+
+.card div img:hover{
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+
+@media print {
+  body *:is(.not-printable, .not-printable) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  
+  img {
+    width:auto;
+    height: 70px;
+    margin-left: 40px;
+  }
+  .imgCV{
+    width:600px;
+    height: 600px;
+  }
+  
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px){
+  img {
+    width:auto;
+    height: 70px;
+    margin-left: 30px;
+  }
+  .desktop-only{
+    display:flex;
+  }
+  .imgCV{
+    width:auto;
+    height: 600px;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  img {
+    width:auto;
+    height: 70px;
+    margin-left: 40px;
+  }
+  .imgCV{
+    width: 600px;
+    height: 600px;
+  }
+  
+}

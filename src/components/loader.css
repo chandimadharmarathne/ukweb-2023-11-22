@@ -1,0 +1,62 @@
+.loader-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* A semi-transparent background overlay */
+    z-index: 9999; /* Ensure it's on top of other content */
+  }
+  
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    position: relative; /* To position the circles absolutely within this container */
+  }
+  
+  .loader-circle {
+    width: 60px; /* Adjust the size of each circle */
+    height: 60px; /* Adjust the size of each circle */
+    border: 2px solid transparent;
+    border-top: 2px solid transparent; /* Transparent border (initially) */
+    border-radius: 50%;
+    position: absolute;
+    
+  }
+  
+  /* Define different colors for each circle */
+  .loader-circle:nth-child(1) {
+    border-top-color: purple; /* Color for the first circle */
+    transform: translateX(40px); /* Adjust the radius */
+    animation: spin 2s linear infinite;
+  }
+  
+  .loader-circle:nth-child(2) {
+    border-top-color: #3498db; /* Color for the second circle */
+    transform: translateX(60px); /* Adjust the radius */
+    animation: spin 3s linear infinite;
+  }
+  
+  .loader-circle:nth-child(3) {
+    border-top-color: #27ae60; /* Color for the third circle */
+    transform: translateX(80px); /* Adjust the radius */
+    animation: spin 4s linear infinite;
+  }
+  
+  .loader-circle:nth-child(4) {
+    border-top-color: #e74c3c; /* Color for the fourth circle */
+    transform: translateX(100px); /* Adjust the radius */
+    animation: spin 5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

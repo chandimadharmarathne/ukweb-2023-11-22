@@ -1,0 +1,79 @@
+.cv-2 {
+  --primary: #4d4d4d;
+  --secondary: #c19a9c;
+  display: flex;
+  width: 1280px;
+  padding: 1rem;
+  color: var(--primary);
+  gap: 1rem;
+}
+
+.cv-2 > aside {
+  flex: 2;
+  background-color: var(--secondary);
+}
+.cv-2 > main {
+  flex: 5;
+}
+.cv-2 > aside img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 3rem;
+}
+.cv-2 h1 {
+  text-align: center;
+  color: #121212;
+}
+.cv-2 p {
+  color: var(--primary);
+}
+.cv-2 section#main {
+  text-align: center;
+}
+.cv-2 section {
+  margin-bottom: 2rem;
+  padding-inline: 1rem;
+}
+.cv-2 section legend {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+}
+.cv-2 aside section legend > * {
+  background-color: var(--secondary);
+  z-index: 1;
+  width: fit-content;
+  padding-right: 1rem;
+}
+.cv-2 aside section legend::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary);
+  z-index: -1;
+}
+.cv-2 .contact-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cv-2 .contact-item > *:first-child {
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.cv-2 .contact-item > *:first-child::after {
+  content: " - ";
+}
+.cv-2 .slider {
+  --color: var(--primary);
+}
+
+.cv-2 section#reference .content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}

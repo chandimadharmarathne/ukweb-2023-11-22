@@ -1,0 +1,33 @@
+.carousel-item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
+    object-fit: cover;
+    overflow: hidden;
+    padding: 10px;
+    margin: 5px;
+  }
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-image: none;
+    color: transparent;
+  }
+  
+  /* Add custom styles to the navigation arrows (optional) */
+  .carousel-control-prev {
+   display: none;
+  }
+  
+  .carousel-control-next {
+    display: none;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+  .carousel-inner {
+    display: flex;
+
+  }

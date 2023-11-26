@@ -1,0 +1,66 @@
+.cv-4 {
+  --primary: #2d2f42;
+  --secondary: #d8d8d8;
+
+  display: flex;
+  width: 1280px;
+  padding: 1rem;
+  color: var(--primary);
+}
+
+.cv-4 > aside {
+  flex: 2;
+  background-color: var(--primary);
+}
+.cv-4 > aside legend {
+  color: var(--secondary);
+}
+.cv-4 > main {
+  flex: 5;
+}
+.cv-4 > aside img {
+  aspect-ratio: 5/6;
+  object-fit: cover;
+}
+.cv-4 h1 {
+  color: #121212;
+}
+.cv-4 .slider {
+  --color: var(--secondary);
+}
+.cv-4 section {
+  margin-bottom: 2rem;
+  padding-inline: 1rem;
+}
+.cv-4 aside p {
+  color: var(--secondary);
+}
+
+.cv-4 .contact-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cv-4 .contact-item > *:first-child {
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.cv-4 .contact-item > *:first-child::after {
+  content: " - ";
+}
+.cv-4 section#main {
+  background-color: var(--secondary);
+  padding: 1rem 2rem;
+}
+.cv-4 section#main .info {
+  display: flex;
+  justify-content: space-between;
+}
+.cv-4 main section {
+  padding: 0 3rem;
+}
+
+.cv-4 section#reference .content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}

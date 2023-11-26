@@ -1,0 +1,67 @@
+.cv-1 {
+  --primary: #2d2f42;
+  --secondary: #d17f29;
+  display: flex;
+  width: 1280px;
+  padding: 1rem;
+  gap: 1rem;
+}
+.cv-1 > aside {
+  flex: 2;
+  background-color: var(--primary);
+  color: #fff;
+}
+.cv-1 > main {
+  flex: 5;
+}
+.cv-1 > aside img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.cv-1 section {
+  padding: 1rem;
+  margin-block: 1rem;
+}
+.cv-1 section legend {
+  text-transform: uppercase;
+  position: relative;
+}
+.cv-1 section legend::before {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary);
+  height: 5px;
+  width: 100%;
+  top: 100%;
+}
+.cv-1 .range {
+  margin-block: 1rem;
+  position: relative;
+}
+
+.cv-1 .range p {
+  margin: 0;
+}
+.cv-1 .slider {
+  --color: var(--secondary);
+}
+.cv-1 h1 {
+  color: var(--secondary);
+}
+.cv-1 .job-title {
+  margin: 0;
+}
+.cv-1 section .info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  place-items: stretch;
+}
+.cv-1 section .info .title::after {
+  content: " - ";
+}
+
+.cv-1 section#reference .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
