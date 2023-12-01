@@ -54,8 +54,8 @@ const StyledFooter = styled("footer")(({ theme }) => {
 const Footer: FC = () => {
   return (
     <StyledFooter className="not-printable" style={{
-      width:'90%',
-      marginLeft:'5%',
+      width: '87.5%',
+      marginLeft:'7%',
     }} >
       <Container className="container">
         <Box>

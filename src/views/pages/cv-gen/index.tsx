@@ -108,8 +108,8 @@ const CVGenerate: FC = () => {
             alignItems: 'center',
           }}>
             <img src="/assets/girlnew.jpg" style={{
-              width: '80%',
-              height: '80%',
+              width: '100%',
+              height: '100%',
              
             }} />
           </Grid>   <Grid item xs={12} md={6} direction={'column'} style={{
@@ -176,13 +176,14 @@ const CVGenerate: FC = () => {
             </Grid></> : <>
             <Grid item xs={12} md={6} style={{
               display: 'flex',
-              marginLeft: -700,
+              marginLeft: isDesktop ? -900 : isMobile ? '30px' : '11px',
+                paddingLeft: isMobile ? '40px' : '11px',
               
 
             }}>
               <img src="/assets/girlnew.jpg" style={{
-                width: isDesktop ? '200%' : "240%",
-                height: '150%',
+                width: isDesktop ? '750px' : "740px",
+                height: 'auto',
                 
               }} />
             </Grid>
@@ -262,7 +263,7 @@ const CVGenerate: FC = () => {
         alignItems: 'center',
         paddingTop: 10,
         paddingBottom: 10,
-        width: isDesktop ? "88%" : isMobile ? "100%" : "90%",
+        width: isDesktop ? "88%" : isMobile ? "92%" : "95%",
         marginLeft: isDesktop ? "4%" : isMobile ? "1%" : "1%",
         //marginLeft: isMobile ? "4%" : "5%",
         // padding: 20,

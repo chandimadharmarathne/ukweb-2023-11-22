@@ -25,39 +25,39 @@ const LoginPage: FC = () => {
   const { code } = useLanguage();
   const { addSnack } = useSnackbar();
   const navigate = useNavigate();
-  const [checked,setChecked] = useState(false);
-  const [loginUser,{data,error}] = useMutation(LOGIN_USER_MUTATION,{
-    client:client
+  const [checked, setChecked] = useState(false);
+  const [loginUser, { data, error }] = useMutation(LOGIN_USER_MUTATION, {
+    client: client
   })
 
   const updateCredentials =
     (name: string, validate: InputField["validator"]) =>
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
-      setCredentials((prev) => ({
-        ...prev,
-        [name]: validate?.(value) ? value : Errors.INPUT_ERROR,
-      }));
-    };
+      (e: ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
+        setCredentials((prev) => ({
+          ...prev,
+          [name]: validate?.(value) ? value : Errors.INPUT_ERROR,
+        }));
+      };
 
   const submit = async () => {
     try {
-     
-   
+
+
       const { data } = await loginUser({
         variables: {
-          email:credentials?.email,
-          password:credentials?.password
+          email: credentials?.email,
+          password: credentials?.password
         },
       });
 
 
       // Handle successful registration, e.g., show a success message or redirect
-    
+
 
       if (data) {
-      
-        localStorage.setItem("user",JSON.stringify(data.registerUser))
+
+        localStorage.setItem("user", JSON.stringify(data.registerUser))
         addSnack?.({
           severity: "success",
           message: "You've successfully Logged",
@@ -75,9 +75,14 @@ const LoginPage: FC = () => {
   };
   return (
     <>
-    
-      <Typography variant="h1">Login</Typography>
-      <Typography className="description">
+
+      <Typography variant="h1" style={{
+        paddingTop: '90px'
+      }}>Login</Typography>
+      <Typography className="description" style={{
+        fontSize: '14px',
+
+      }}>
         Welcome back. Sign in to your account
       </Typography>
 
@@ -88,7 +93,7 @@ const LoginPage: FC = () => {
           return (
             <Input
               style={{
-                margin:20
+                margin: 20
               }}
               {...input.props}
               error={hasError}
@@ -99,44 +104,44 @@ const LoginPage: FC = () => {
             />
           );
         })}
-     
-     <Stack direction="row" style={{
-      justifyContent:'center',
 
-     }}>
-          
-          <Checkbox checked={checked} onChange={(e) =>{
-          
-            localStorage.setItem("email",credentials?.email)
-            localStorage.setItem("password",credentials?.password)
+        <Stack direction="row" style={{
+          justifyContent: 'center',
+
+        }}>
+
+          <Checkbox checked={checked} onChange={(e) => {
+
+            localStorage.setItem("email", credentials?.email)
+            localStorage.setItem("password", credentials?.password)
             setChecked(!checked)
 
           }} />
           <Typography style={{
-            marginTop:10
+            marginTop: 10
           }} className="link">
             Stay signed in
           </Typography>
         </Stack>
-       
+
         <Stack className="bottom_section" spacing={2}>
-          <SubmitButton onClick={()=>{
-submit()
+          <SubmitButton onClick={() => {
+            submit()
           }}>Login</SubmitButton>
-          <IconButton startIcon={<FacebookIcon color="info"/>} >
-             Sign In Facebook
+          <IconButton startIcon={<FacebookIcon color="info" />} >
+            Sign In Facebook
           </IconButton>
-          <IconButton startIcon={<GoogleIcon color="error"/>}>
-             Sign In Google
+          <IconButton startIcon={<GoogleIcon color="error" />}>
+            Sign In Google
           </IconButton>
           <Link to="/forgot-password">
-          <Typography style={{
-            textAlign:'center'
-          }} className="link">Forgot Your Password?</Typography>
-        </Link>
+            <Typography style={{
+              textAlign: 'center'
+            }} className="link">Forgot Your Password?</Typography>
+          </Link>
           <Stack direction="row" spacing={1}>
-          
-            <Typography color="secondary">Not Registered Yet?</Typography> 
+
+            <Typography color="secondary">Not Registered Yet?</Typography>
             <Link to="/register">
               <Typography className="link">Register</Typography>
             </Link>

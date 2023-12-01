@@ -219,7 +219,7 @@ const CVGenerate: FC = () => {
               justifyContent: 'center',
               alignItems: 'center',
               paddingLeft: isMobile ? '34%' : isDesktop ? "16%" : 91, // Space between bullets and text
-              paddingRight: isMobile ? '11%':'11%',
+              paddingRight: isMobile ? '11%' : '11%',
               marginTop: isMobile ? -20 : -20,
             }}>
               <Button component={Link} to="/cv-gen/onboarding" variant="contained" style={{
@@ -245,7 +245,7 @@ const CVGenerate: FC = () => {
             height: '100%',
             position: 'relative',
             marginTop: isDesktop ? '130px' : isMobile ? '60px' : '60px',
-            paddingBottom: isDesktop ? '350px'  : isMobile ? '150px' : '150px',
+            paddingBottom: isDesktop ? '350px' : isMobile ? '150px' : '150px',
 
             //paddingRight:'27px',
             //marginLeft:isMobile? 0:isDesktop ?"9%":0,
@@ -253,10 +253,14 @@ const CVGenerate: FC = () => {
             // marginRight:isMobile? 10:isDesktop? 48 :30,
 
           }}>
-            <img src="/assets/cvGirl.png" style={{
-              width: isDesktop ? '90%' : isMobile ? '78%' : '100%',
+            <img src="/assets/cvGirl.jpg" style={{
+              width: isDesktop ? '65%' : isMobile ? '78%' : '100%',
               height: 'auto',
-              position: 'absolute',
+              position: isDesktop ? 'absolute' : isMobile ? 'relative' : 'relative',
+              paddingTop: isDesktop ? '10px' : isMobile ? '10px' : '15px',
+              marginBottom: isMobile ? '-140px' : '-150px',
+              marginTop: isMobile ? '-140px' : '-150px',
+              marginRight: '-150px',
             }} />
             <img src="/assets/mainCv.jpeg" style={{
               width: isDesktop ? '50%' : isMobile ? '48%' : '50%',
@@ -307,13 +311,13 @@ const CVGenerate: FC = () => {
               alignItems: 'center', // You can adjust alignment as needed
               padding: isDesktop ? "18px 78px" : isMobile ? "10px 10px" : "10px 10px",
               //width:"100%"
-              width: isDesktop? 500  : isTablet ? "90%" : "90%",
-              marginLeft: isDesktop ? 60 : isMobile ? -10 : -10,
+              width: isDesktop ? 500 : isTablet ? "90%" : "90%",
+              marginLeft: isDesktop ? 40 : isMobile ? -10 : -10,
             }}>
               <div style={{
-                paddingLeft : isDesktop? 0  : isMobile ? -10 : -10,
-                paddingRight : isMobile ? 10 : 10,
-                width: isDesktop? 500  : isMobile ? 300 : 300,
+                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
+                width: isDesktop ? 500 : isMobile ? 300 : 300,
                 paddingBottom: 20,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
@@ -338,8 +342,9 @@ const CVGenerate: FC = () => {
               </div>
               <div style={{
                 paddingBottom: 20,
-                paddingRight: isMobile ? 10 : 10,
-                width: isDesktop? 500  :  isMobile ? 300 : 300,
+                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
+                width: isDesktop ? 500 : isMobile ? 300 : 300,
                 // padding: 10,
                 // paddingBottom:isMobile?20:10,
               }}>
@@ -362,8 +367,9 @@ const CVGenerate: FC = () => {
                 </Typography>
               </div>
               <div style={{
-                paddingRight: isMobile ? 10 : 10,
-                width: isDesktop? 500  :  isMobile ? 300 : 300,
+                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
+                width: isDesktop ? 500 : isMobile ? 300 : 300,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
               }}>
@@ -444,7 +450,7 @@ const CVGenerate: FC = () => {
 
 
         <Grid item xs={12} md={6} lg={6} style={{
-          marginLeft: isDesktop ? '-70px' : isMobile ? '-70px' : '-70px',
+          marginLeft: isDesktop ? '-70px' : isMobile ? '15px' : '15px',
           marginRight: isDesktop ? '4%' : isMobile ? '4%' : '4%',
           // change How to create CV within 03 steps margine in both side//
           // In here, can change image ( correct, incorrect) paddings and image size//

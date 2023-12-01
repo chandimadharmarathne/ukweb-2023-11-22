@@ -293,13 +293,13 @@ import {
               </Grid></> : <>
               <Grid item xs={12} md={6} style={{
                 display: 'flex',
-                marginLeft: -700,
-                
+                marginLeft: isDesktop ? -900 : isMobile ? '30px' : '11px',
+                paddingLeft: isMobile ? '40px' : '11px',
   
               }}>
                 <img src="/assets/girlnew.jpg" style={{
-                  width: isDesktop ? '200%' : "240%",
-                  height: '150%',
+                  width: isDesktop ? '750px' : "740px",
+                  height: 'auto',
                   
                 }} />
               </Grid>

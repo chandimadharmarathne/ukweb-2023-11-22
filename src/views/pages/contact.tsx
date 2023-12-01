@@ -110,7 +110,7 @@ const ContactPage: FC<ContactPageProps> = () => {
        
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6} >
             <Typography variant="h2" style={{
-              marginTop:50,
+              marginTop:60,
               marginLeft:"1%"
             }} >
               Leave a Massege
@@ -120,7 +120,10 @@ const ContactPage: FC<ContactPageProps> = () => {
       <TextField
         style={{
             padding:10,
-            width:'40%'
+            width:'50%',
+            textAlign:'center',
+            paddingTop:'10px',
+            justifyContent:'center',
         }}
         select
         name="title"
@@ -234,6 +237,7 @@ const ContactPage: FC<ContactPageProps> = () => {
       <Button startIcon={<Send/>} type="submit" variant="contained" style={{
           backgroundColor:'green',
           height:50,
+          marginTop:50,
         }}>
         Send
       </Button>
@@ -241,17 +245,18 @@ const ContactPage: FC<ContactPageProps> = () => {
         
           </Grid>
 
-          {/* <Grid item xs={12} sm={12} md={6} lg={6} xl={6} >
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6} >
               <img  
               style={{
-                width:'100%',
-                height:'100%',
-                objectFit:'cover'
+                width:'90%',
+                height:'90%',
+                objectFit:'cover',
+                paddingTop:'20px'
               }}
-              src ="/assets/help.jpeg"
+              src ="/assets/helpwomem.jpg"
               alt="help"
               />
-            </Grid> */}
+            </Grid>
         
      </Grid>
     </div>

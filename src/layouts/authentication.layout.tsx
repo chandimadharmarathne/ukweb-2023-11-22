@@ -38,10 +38,11 @@ const StyledPage = styled("main")(({ theme }) => ({
   img: {
     position: "absolute", // Set the image to absolute position
     top: 0,
-    left: 0,
-    width: "100%",
+    left: 25,
+    width: "90%",
     height: "100%",
     zIndex: -1, // Place the image behind the text
+    
   },
   "::before": {
     ...weirdGredient,

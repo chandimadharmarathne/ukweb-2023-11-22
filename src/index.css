@@ -93,7 +93,7 @@ main {
   img {
     width:auto;
     height: 70px;
-    margin-left: 40px;
+    margin-left: -5px;
   }
   .imgCV{
     width:600px;
@@ -128,4 +128,9 @@ main {
     height: 600px;
   }
   
+}
+.description {
+  padding-top: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
 }

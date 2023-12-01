@@ -107,7 +107,9 @@ const RegisterPage: FC<RegisterProps> = ({ viaCV, defaults, details }) => {
   };
   return (
     <>
-      <Typography variant="h1">Register</Typography>
+      <Typography variant="h1" style={{
+        paddingTop: '90px'
+      }}>Register</Typography>
 
       <Stack spacing={4} className="content">
       {getInputs(credentials).map((input) => {

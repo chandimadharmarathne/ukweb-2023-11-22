@@ -48,7 +48,11 @@ const ForgotPasswordPage: FC<ForgotPasswordPageProps> = () => {
 
   return (
     <>
-      <Typography variant="h1">Reset Password</Typography>
+      <Typography variant="h1"
+       style={{
+        paddingTop:'100px'
+      }}
+      >Reset Password</Typography>
 
       <Stack spacing={4} className="content">
         {inputs.map((input) => {
