@@ -33,10 +33,10 @@ a {
   cursor: not-allowed !important;
 }
 
-main {
+/* main {
   
   
-}
+} */
 
 .container {
   display: flex;
@@ -133,4 +133,11 @@ main {
   padding-top: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 18px;
+}
+.t-text-style {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 14px;
 }

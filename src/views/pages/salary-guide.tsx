@@ -3,6 +3,7 @@ import { useMediaQuery, styled, Theme } from "@mui/material";
 import LoadingComponent from '../../components/loader';
 import { useNavigate } from "react-router-dom";
 import SalaryJob from "./salary-job";
+import './../../index.css';
 
 interface HomePageProps { }
 
@@ -36,7 +37,7 @@ const StyledPage = styled("main")(({ theme }) => ({
       position: 'absolute',
       left: 0,
       right: 0,
-      top : '20px',
+      top : '30px',
       // bottom: '15px',
       height: '3px',
       backgroundColor: 'blue',
@@ -56,6 +57,10 @@ const StyledPage = styled("main")(({ theme }) => ({
       transform: 'scaleX(1)',
       transformOrigin: 'center',
     },
+
+    // '&.t-text-style': {
+    //   font-size: 
+    // },
   },
 }));
 
@@ -65,7 +70,9 @@ const HomePage: FC<HomePageProps> = () => {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const [load, setLoad] = useState(true); // Set load to true initially to trigger useEffect
   const [showSalaryJob, setShowSalaryJob] = useState(false);
-
+  const isDesktop = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.up("lg")
+);
   const loaderConfig = {
     color: 'darkblue',
     size: 40,
@@ -95,25 +102,31 @@ const HomePage: FC<HomePageProps> = () => {
       {load ? <LoadingComponent config={loaderConfig} /> : null}
 
       <div style={{
-        marginTop:'100px',
+        marginTop:'120px',
+        // paddingTop:'20px'
         paddingBottom:'0px',
-        paddingLeft:'10%',
-        alignContent:'center',
+        marginBottom:'-25px',
+        paddingLeft:isMobile ? '55%' : isDesktop ? '83%' : '84%',
+        
+        alignContent:'flex-end',
         alignItems:'center',
-        fontWeight:'bold'
-
-      }}>
+        fontWeight:'bold',
+        paddingRight:0,
+        // justifyContent:'right',
+        // fontSize:'18px',
+                
+      }} className="t-text-style">
         <button 
           onClick={() => handleButtonClick('salaries')}
           className={selectedButton === 'salaries' ? 'selected' : ''}
         >
-          Salaries
+          <h3>Salaries</h3>
         </button>
         <button
           onClick={() => handleButtonClick('newJobs')}
           className={selectedButton === 'newJobs' ? 'selected' : ''}
         >
-          New Jobs
+          <h3>New Jobs</h3>
         </button>
       </div>
 
