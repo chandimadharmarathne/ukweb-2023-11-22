@@ -224,7 +224,7 @@ const HomePage: FC<HomePageProps> = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-            <img src="/assets/girlnew.jpg" style={{
+            <img src="/assets/girlnew.png" style={{
               width: '80%',
               height: '80%',
 

@@ -20,6 +20,7 @@ import {
   Typography,
   styled,
   useMediaQuery,
+  Theme,
 } from "@mui/material";
 import React, {
   ChangeEvent,
@@ -27,6 +28,7 @@ import React, {
   FC,
   useEffect,
   useState,
+  
 } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { StyledBox } from "../../../components/candidate/overview";

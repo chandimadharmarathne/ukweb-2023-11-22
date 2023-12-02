@@ -486,7 +486,7 @@ const HomePage: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'gray',
-          width: isDesktop ? "89%" : isMobile ? "80%" : "85%",
+          width: isDesktop ? "89%" : isTablet ? "90%" : isMobile ? "80%" : "85%",
 
         }}>
           <h1 style={{
@@ -522,7 +522,8 @@ const HomePage: FC<HomePageProps> = () => {
               display: 'flex',
               justifyContent: isMobile ? 'center' : 'space-between',
               alignItems: 'center',
-              padding: isMobile ? 0 : 10
+              padding: isMobile ? 0 : 10,
+              
             }}>
               <PostJobCard card={dumyDataforPosting[0]} />
             </Grid>

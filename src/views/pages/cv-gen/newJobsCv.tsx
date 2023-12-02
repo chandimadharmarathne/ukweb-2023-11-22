@@ -253,14 +253,15 @@ const CVGenerate: FC = () => {
             // marginRight:isMobile? 10:isDesktop? 48 :30,
 
           }}>
-            <img src="/assets/cvGirl.jpg" style={{
-              width: isDesktop ? '65%' : isMobile ? '78%' : '100%',
+            <img src="/assets/cvGirl.png" style={{
+              width: isDesktop ? '65%' : isTablet ? '80%' : isMobile ? '78%' : '100%',
               height: 'auto',
               position: isDesktop ? 'absolute' : isMobile ? 'relative' : 'relative',
               paddingTop: isDesktop ? '10px' : isMobile ? '10px' : '15px',
               marginBottom: isMobile ? '-140px' : '-150px',
               marginTop: isMobile ? '-140px' : '-150px',
               marginRight: '-150px',
+              paddingLeft: isTablet ? '100px' : '101px',
             }} />
             <img src="/assets/mainCv.jpeg" style={{
               width: isDesktop ? '50%' : isMobile ? '48%' : '50%',
@@ -317,7 +318,7 @@ const CVGenerate: FC = () => {
               <div style={{
                 paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
                 paddingBottom: 20,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
@@ -344,7 +345,7 @@ const CVGenerate: FC = () => {
                 paddingBottom: 20,
                 paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
                 // padding: 10,
                 // paddingBottom:isMobile?20:10,
               }}>
@@ -369,7 +370,7 @@ const CVGenerate: FC = () => {
               <div style={{
                 paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
               }}>

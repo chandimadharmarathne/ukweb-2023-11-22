@@ -7,6 +7,7 @@ import {
   Button,
   styled,
   useMediaQuery,
+  Theme,
 } from "@mui/material";
 import CantactUs from "./cantactUs";
 
@@ -38,8 +39,12 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
 const PostJobCard: FC<PostJobCardProps> = ({ card }) => {
   const isMobile = useMediaQuery('(max-width: 600px)');
 
+  const isTablet = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.between("sm", "md")
+);
+
   const StyledCard = styled(Card)(({ theme }) => ({
-    width: isMobile ? 200 : 800, // Fixed width
+    width:isMobile ? 200 : 800, // Fixed width
     height: 300, // Fixed height
     maxWidth: 800,
     margin: "20px",

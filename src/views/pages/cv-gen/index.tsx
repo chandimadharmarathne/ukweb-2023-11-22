@@ -49,7 +49,9 @@ const CVGenerate: FC = () => {
     client: client
   })
   const [open, setOpen] = useState(false)
-
+  const isTablet = useMediaQuery<Theme>((theme) =>
+    theme.breakpoints.between("sm", "md")
+  );
   const isDesktop = useMediaQuery<Theme>((theme) =>
     theme.breakpoints.up("lg")
   );
@@ -96,7 +98,7 @@ const CVGenerate: FC = () => {
 
       <Grid container spacing={2} style={{
         paddingLeft: isDesktop ? "0%" : isMobile ? "0%" : "8.5%",
-        width: isDesktop ? "90%" : isMobile ? "100%" : "90%",
+        width: isDesktop ? "90%" :isMobile? "100%": "90%",
         justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
@@ -107,15 +109,15 @@ const CVGenerate: FC = () => {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-            <img src="/assets/girlnew.jpg" style={{
+            <img src="/assets/girlnew.png" style={{
               width: '100%',
               height: '100%',
-             
+
             }} />
           </Grid>   <Grid item xs={12} md={6} direction={'column'} style={{
             display: 'flex',
             justifyContent: 'flex-start',
-            alignItems: 'flex-start',         
+            alignItems: 'flex-start',
           }}>
 
               <Stack direction={"column"} alignItems="flex-start" >
@@ -166,7 +168,7 @@ const CVGenerate: FC = () => {
                   justifyContent: 'center',
                   marginBottom: 10,
                   marginTop: 10,
-                  
+
                   backgroundColor: 'green'
                 }}>
                   Apply Now
@@ -176,15 +178,15 @@ const CVGenerate: FC = () => {
             </Grid></> : <>
             <Grid item xs={12} md={6} style={{
               display: 'flex',
-              marginLeft: isDesktop ? -900 : isMobile ? '30px' : '11px',
-                paddingLeft: isMobile ? '40px' : '11px',
-              
+              marginLeft: isDesktop ? -700 :isTablet ? -130 : isMobile ? '30px' : '11px',
+              paddingLeft: isMobile ? '40px' : '11px',
+
 
             }}>
-              <img src="/assets/girlnew.jpg" style={{
-                width: isDesktop ? '750px' : "740px",
+              <img src="/assets/girlnew.png" style={{
+                width: isDesktop ? '750px' : isTablet ?  "440px" : "450px",
                 height: 'auto',
-                
+
               }} />
             </Grid>
             <Grid item xs={12} md={6} direction={'column'} style={{
@@ -192,15 +194,16 @@ const CVGenerate: FC = () => {
               justifyContent: 'center',
               alignItems: 'center',
               paddingLeft: 150, //isDesktop ? "8%" : "8%",
-              marginTop:-100,
-              marginRight:-800
+              marginTop: isDesktop ? -100 : isTablet ? -500 : -510,
+              marginRight: isDesktop ? -800 : isTablet ? -250 : -260,
+        
             }}>
 
               <Stack direction={"column"} alignItems="flex-start">
                 <Stack direction={"row"} alignItems="center">
                   <CheckCircleIcon color="success" style={{
                     width: 100,
-                    
+
                   }} />
                   <Typography style={{
                     fontSize: 25,
