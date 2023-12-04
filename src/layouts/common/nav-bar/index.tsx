@@ -131,7 +131,7 @@ const NavBar: FC<NavBarProps> = () => {
         backgroundColor:"white",
         height:100,
         color:'black',
-        width:isDesktop? '89%':isMobile ? '89%':'90%',
+        width:isDesktop? '89%' : isTablet ? "89%":isMobile ? '89%':'90%',
         alignContent:'flex-start',
         alignItems: 'flex-start',
         
@@ -144,9 +144,12 @@ const NavBar: FC<NavBarProps> = () => {
       <Toolbar
         variant="regular"
         style={{
+          
           justifyContent: "space-between",
           padding: isDesktop ?"10px 1px": isMobile ? "8px 9px":"7px 8px", 
-        width:"95%"
+        width: isDesktop ? "89%" : isTablet ? "94%" :isMobile ? "95%" : "95%",
+        paddingLeft: isDesktop ? 0 : isMobile ? 5 : 5,
+        marginLeft: isDesktop ? -8 : isMobile ? 5 : 5,
         }}
       >
         <Link to={"/"} style={{

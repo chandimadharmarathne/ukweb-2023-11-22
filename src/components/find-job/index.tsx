@@ -262,7 +262,7 @@ const FindUsers: FC<Props> = ({ type, query, navigateLink, url }) => {
            }}>
            <TextField
               style={{
-                width: isDesktop ? "100%":isMobile?"98%":"90%",
+                width: isDesktop ? "93%": isTablet ? "50%" :isMobile?"98%":"90%",
               }}
               //fullWidth
               variant="outlined"

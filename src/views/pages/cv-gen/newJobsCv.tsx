@@ -257,10 +257,10 @@ const CVGenerate: FC = () => {
               width: isDesktop ? '85%' : isTablet ? '80%' : isMobile ? '98%' : '100%',
               height: 'auto',
               position: isDesktop ? 'absolute' : isMobile ? 'relative' : 'relative',
-              paddingTop: isDesktop ? '100px' : isMobile ? '10px' : '15px',
+              paddingTop: isDesktop ? '150px' : isMobile ? '10px' : '15px',
               marginBottom: isMobile ? '-100px' : '-110px',
               marginTop: isMobile ? '-140px' : '-150px',
-              marginRight: isDesktop? '-150px' : isMobile ? '-125px' : '-130px',
+              marginRight: isDesktop? '-110px' : isMobile ? '-125px' : '-130px',
               paddingLeft: isTablet ? '100px' : '101px',
             }} />
             <img src="/assets/mainCv.jpeg" style={{
@@ -466,7 +466,7 @@ const CVGenerate: FC = () => {
             width: isDesktop ? '92%' : isMobile ? '118%' : '119%',
             height: '100%',
             paddingLeft: '-50%',
-            marginLeft: isMobile ? '-30px' : '-30px',
+            marginLeft: isDesktop ? '50px' : isMobile ? '-30px' : '-30px',
 
           }} />
 

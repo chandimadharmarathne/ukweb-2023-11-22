@@ -294,7 +294,8 @@ const HomePage: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'white',
-          width: isDesktop ? "89%" : isMobile ? "87%" : "87%",
+          width: isDesktop ? "88%" : isMobile ? "87%" : "87%",
+          marginLeft: isDesktop ? "1.5%" : isMobile ? "0%" : "0%",
 
         }}>
           <h2 style={{
@@ -486,8 +487,8 @@ const HomePage: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'gray',
-          width: isDesktop ? "85%" : isTablet ? "90%" : isMobile ? "88%" : "88%",
-
+          width: isDesktop ? "88%" : isTablet ? "90%" : isMobile ? "88%" : "88%",
+          marginLeft: isDesktop ? "1.5%" : isMobile ? "0%" : "0%",
         }}>
           <h1 style={{
             textAlign: 'center',

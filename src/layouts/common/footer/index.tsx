@@ -75,7 +75,7 @@ const isDesktop = useMediaQuery<Theme>((theme) =>
   return (
     <StyledFooter className="not-printable" style={{
       width: isDesktop ? '87.5%' : isMobile ? '87.5%' : '87.5%',
-      marginLeft: isDesktop ? '8%' : isMobile ? '6.5%' : '6.5%',
+      marginLeft: isDesktop ? '7%' : isMobile ? '6.5%' : '6.5%',
       justifyContent: 'center',
         alignItems: 'center',
         display:'flex',
@@ -97,7 +97,7 @@ const isDesktop = useMediaQuery<Theme>((theme) =>
           <Typography maxWidth={"50ch"} style={{
                 justifyContent:'center',
                 alignItems:'center',
-                textAlign: isMobile ? 'center':'center',
+                textAlign: isDesktop ? 'start': isMobile ? 'center':'center',
               }}>
             jobwomen offers outstanding packages for both candidates and
             recruiters to find jobs and employees in the most effective way.
