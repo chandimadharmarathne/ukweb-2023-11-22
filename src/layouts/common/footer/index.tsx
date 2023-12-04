@@ -16,6 +16,8 @@ import {
   Stack,
   styled,
   Typography,
+  useMediaQuery,
+  Theme,
 } from "@mui/material";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
@@ -26,9 +28,17 @@ import {
   INSTAGRAM_LINK,
   LINKEDIN_LINK,
 } from "../../../constants/social-links";
+import { useQuery } from "@apollo/client";
 
 const StyledFooter = styled("footer")(({ theme }) => {
   const textColor = theme.palette.secondary.contrastText;
+  const isMobile = useMediaQuery('(max-width: 600px)'); 
+  const isTablet = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.between("sm", "md")
+);
+const isDesktop = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.up("lg")
+);
   return {
     background: theme.palette.secondary.main,
     ".container": {
@@ -52,10 +62,25 @@ const StyledFooter = styled("footer")(({ theme }) => {
   };
 });
 const Footer: FC = () => {
+
+  const isMobile = useMediaQuery('(max-width: 600px)'); 
+  const isTablet = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.between("sm", "md")
+);
+const isDesktop = useMediaQuery<Theme>((theme) =>
+  theme.breakpoints.up("lg")
+);
+
+
   return (
     <StyledFooter className="not-printable" style={{
-      width: '87.5%',
-      marginLeft:'7%',
+      width: isDesktop ? '87.5%' : isMobile ? '87.5%' : '87.5%',
+      marginLeft: isDesktop ? '8%' : isMobile ? '6.5%' : '6.5%',
+      justifyContent: 'center',
+        alignItems: 'center',
+        display:'flex',
+      
+
     }} >
       <Container className="container">
         <Box>
@@ -65,9 +90,15 @@ const Footer: FC = () => {
               alt="jobwomen logo"
               width={240}
               height={100}
+              
+            
             />
           </Link>
-          <Typography maxWidth={"50ch"}>
+          <Typography maxWidth={"50ch"} style={{
+                justifyContent:'center',
+                alignItems:'center',
+                textAlign: isMobile ? 'center':'center',
+              }}>
             jobwomen offers outstanding packages for both candidates and
             recruiters to find jobs and employees in the most effective way.
             Keep in touch with us to explore your DREAM CAREER. © 2022 jobwomen.

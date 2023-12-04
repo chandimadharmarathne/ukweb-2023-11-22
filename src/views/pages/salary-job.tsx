@@ -225,8 +225,9 @@ const HomePage: FC<HomePageProps> = () => {
             alignItems: 'center',
           }}>
             <img src="/assets/girlnew.png" style={{
-              width: '80%',
-              height: '80%',
+              width: '90%',
+              height: '100%',
+              paddingLeft: isMobile ? '4%' : '5%',
 
             }} />
           </Grid>   <Grid item xs={12} md={6} direction={'column'} style={{
@@ -275,7 +276,10 @@ const HomePage: FC<HomePageProps> = () => {
               <div style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingLeft: 150,
+                textAlign : isMobile ? 'center' :'center',
+
+                paddingLeft: isMobile ? '38%' : '38%',
+                // paddingLeft: 150,
                 //paddingLeft: 150, // Space between bullets and text
               }}>
                 <Button component={Link} to="/cv-gen/onboarding" variant="contained" style={{

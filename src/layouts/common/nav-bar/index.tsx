@@ -145,8 +145,8 @@ const NavBar: FC<NavBarProps> = () => {
         variant="regular"
         style={{
           justifyContent: "space-between",
-          padding: isDesktop ?"10px 1px": isMobile ? "5px 25px":"10px 5px", 
-        width:"88%"
+          padding: isDesktop ?"10px 1px": isMobile ? "8px 9px":"7px 8px", 
+        width:"95%"
         }}
       >
         <Link to={"/"} style={{

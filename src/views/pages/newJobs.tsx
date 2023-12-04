@@ -145,7 +145,7 @@ const NewJobs: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'gray',
-          width: isDesktop ? "87%" : isMobile ? "90%" : "95%",
+          width: isDesktop ? "87%" : isMobile ? "87.5%" : "87.5%",
           marginLeft: isDesktop ? "1.5%" : isMobile ? "0%" : "7.5%",
         }}>
           <h1 style={{

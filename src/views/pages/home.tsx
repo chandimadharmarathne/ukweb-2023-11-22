@@ -294,7 +294,7 @@ const HomePage: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'white',
-          width: isDesktop ? "89%" : isMobile ? "80%" : "85%",
+          width: isDesktop ? "89%" : isMobile ? "87%" : "87%",
 
         }}>
           <h2 style={{
@@ -379,7 +379,7 @@ const HomePage: FC<HomePageProps> = () => {
 
 
               ))}
-              <img src="../assets/rightArrow.png" id="rightArrow" style={{position:'fixed', right:'15%', top:'-8%', transform:  'translateY(-50%)', cursor: 'pointer' }} onClick={scrollToRight}/>
+              <img src="../assets/rightArrow.png" id="rightArrow" style={{position:'fixed', right: isDesktop? '15%' : isMobile ? '11%' : '12%', top:'-8%', transform:  'translateY(-50%)', cursor: 'pointer' }} onClick={scrollToRight}/>
 
             </div>
 
@@ -486,7 +486,7 @@ const HomePage: FC<HomePageProps> = () => {
       }}>
         <Card style={{
           backgroundColor: 'gray',
-          width: isDesktop ? "89%" : isTablet ? "90%" : isMobile ? "80%" : "85%",
+          width: isDesktop ? "85%" : isTablet ? "90%" : isMobile ? "88%" : "88%",
 
         }}>
           <h1 style={{

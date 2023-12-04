@@ -254,21 +254,21 @@ const CVGenerate: FC = () => {
 
           }}>
             <img src="/assets/cvGirl.png" style={{
-              width: isDesktop ? '65%' : isTablet ? '80%' : isMobile ? '78%' : '100%',
+              width: isDesktop ? '85%' : isTablet ? '80%' : isMobile ? '98%' : '100%',
               height: 'auto',
               position: isDesktop ? 'absolute' : isMobile ? 'relative' : 'relative',
-              paddingTop: isDesktop ? '10px' : isMobile ? '10px' : '15px',
-              marginBottom: isMobile ? '-140px' : '-150px',
+              paddingTop: isDesktop ? '100px' : isMobile ? '10px' : '15px',
+              marginBottom: isMobile ? '-100px' : '-110px',
               marginTop: isMobile ? '-140px' : '-150px',
-              marginRight: '-150px',
+              marginRight: isDesktop? '-150px' : isMobile ? '-125px' : '-130px',
               paddingLeft: isTablet ? '100px' : '101px',
             }} />
             <img src="/assets/mainCv.jpeg" style={{
-              width: isDesktop ? '50%' : isMobile ? '48%' : '50%',
+              width: isDesktop ? '70%' : isMobile ? '78%' : '80%',
               height: 'auto',
               position: 'absolute',
               paddingRight: '50px',
-              paddingTop: '200px',
+              paddingTop: isDesktop ?'200px' : isMobile ? '70px' : '72px',
               marginLeft: isDesktop ? '-400px' : isMobile ? 0 : 13,
               marginBottom: isMobile ? '70px' : 13,
             }} />
@@ -284,7 +284,7 @@ const CVGenerate: FC = () => {
         //  fontFamily: 'ubuntu, sans-serif',
         textAlign: 'center',
         color: 'black',
-        marginTop: '50px',
+        marginTop: isDesktop ? '100px' : isMobile ? '30px':'32px',
       }}>
         How to Create CV within 03 steps
       </Typography>
@@ -313,12 +313,13 @@ const CVGenerate: FC = () => {
               padding: isDesktop ? "18px 78px" : isMobile ? "10px 10px" : "10px 10px",
               //width:"100%"
               width: isDesktop ? 500 : isTablet ? "90%" : "90%",
-              marginLeft: isDesktop ? 40 : isMobile ? -10 : -10,
+              marginLeft: isDesktop ? 40 : isMobile ? -40 : -40,
             }}>
               <div style={{
-                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                textAlign : isMobile ? 'center' :'center',
+                paddingLeft: isDesktop ? 0 : isMobile ? 15 : 15,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 315 : 315,
                 paddingBottom: 20,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
@@ -342,10 +343,11 @@ const CVGenerate: FC = () => {
                 </Typography>
               </div>
               <div style={{
+                textAlign : isMobile ? 'center' :'center',
                 paddingBottom: 20,
-                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                paddingLeft: isDesktop ? 0 : isMobile ? 15 : 15,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 315 : 315,
                 // padding: 10,
                 // paddingBottom:isMobile?20:10,
               }}>
@@ -368,9 +370,10 @@ const CVGenerate: FC = () => {
                 </Typography>
               </div>
               <div style={{
-                paddingLeft: isDesktop ? 0 : isMobile ? 35 : 35,
+                textAlign : isMobile ? 'center' :'center',
+                paddingLeft: isDesktop ? 0 : isMobile ? 15 : 15,
                 paddingRight: isDesktop ? 35 : isMobile ? 10 : 10,
-                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 300 : 300,
+                width: isDesktop ? 500 : isTablet ? 450 : isMobile ? 315 : 315,
                 // padding: 10,
                 //paddingBottom:isMobile?20:10,
               }}>
@@ -458,9 +461,12 @@ const CVGenerate: FC = () => {
         }}>
 
           <img src="/assets/admire.jpeg" style={{
-            width: isDesktop ? '92%' : isMobile ? '97%' : '90%',
-            height: '70%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: isDesktop ? '92%' : isMobile ? '118%' : '119%',
+            height: '100%',
             paddingLeft: '-50%',
+            marginLeft: isMobile ? '-30px' : '-30px',
 
           }} />
 

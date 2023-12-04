@@ -215,9 +215,9 @@ const FindUsers: FC<Props> = ({ type, query, navigateLink, url }) => {
           display:'flex',
           flexDirection:"row",
           width:isDesktop ? "94.5%":"100%",
-          marginLeft:isDesktop ? 25:isMobile ? 25:75,
+          //marginLeft:isDesktop ? 25:isMobile ? 10:11,
           borderRadius:0,
-          
+          marginLeft :isDesktop ? 25: isMobile ? '-4%' : '-5%',
           
          }}
          >
@@ -256,11 +256,13 @@ const FindUsers: FC<Props> = ({ type, query, navigateLink, url }) => {
 
            <div style={{
             width:isDesktop? "90%":isMobile?"100%":"66%",
+            // marginLeft : isMobile ? '10%' : '11%',
+            marginRight : isMobile ? '-4%' : '-5%',
             borderRadius:0,
            }}>
            <TextField
               style={{
-                width: isDesktop ? "100%":isMobile?"95%":"90%",
+                width: isDesktop ? "100%":isMobile?"98%":"90%",
               }}
               //fullWidth
               variant="outlined"
@@ -285,8 +287,8 @@ const FindUsers: FC<Props> = ({ type, query, navigateLink, url }) => {
           direction={isMobile ? 'column' : 'row'}
           spacing={{ xs: 2, md: 3 }}
           padding={ isDesktop? "23px 3%": isMobile ?"10px 35px":"5px 45px"}
-          marginLeft={isDesktop ? 0:isMobile ? 1:0}
-          width="100%"
+          marginLeft={isDesktop ? 0:isMobile ? -3.5:-3.5}
+          width={ isDesktop ? "100%" : isMobile ? "120%" : "120%"}
         >
           {/* Render your JobCards or other components here */}
           {jobData?.map((card: any) => (
