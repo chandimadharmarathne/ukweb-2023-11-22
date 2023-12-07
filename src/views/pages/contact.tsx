@@ -253,7 +253,7 @@ const ContactPage: FC<ContactPageProps> = () => {
                 objectFit:'cover',
                 paddingTop:'20px'
               }}
-              src ="/assets/helpwomem.jpg"
+              src ="/assets/helpwomem.png"
               alt="help"
               />
             </Grid>
