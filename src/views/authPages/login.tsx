@@ -17,6 +17,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { LOGIN_USER_MUTATION } from "../../query";
 import { useMutation } from "@apollo/client";
 import client from "../../applo";
+import GoogleLogin from "react-google-login";
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+
+
 const LoginPage: FC = () => {
   const [credentials, setCredentials] = useState<Credentials>({
     type: DATA_USER_TYPES[0].id,
@@ -73,6 +77,31 @@ const LoginPage: FC = () => {
       });
     }
   };
+
+  const responseGoogle = (response: any) => {
+    console.log(response);
+    // Handle Google authentication response here
+  };
+
+  const customGoogleButton = ({ onClick }: { onClick: () => void }) => (
+    <button
+      onClick={onClick}
+      style={{
+        backgroundColor: '#DB4437', // Google red color
+        color: 'white',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        border: 'none',
+        cursor: 'pointer',
+      }}
+    >
+      Custom Sign In with Google
+    </button>
+  );
+
+
+
+
   return (
     <>
 
@@ -131,9 +160,23 @@ const LoginPage: FC = () => {
           <IconButton startIcon={<FacebookIcon color="info" />} >
             Sign In Facebook
           </IconButton>
-          <IconButton startIcon={<GoogleIcon color="error" />}>
+
+          <GoogleLogin
+            clientId="GOOGLE_CLIENT_ID"
+            buttonText="Sign In with Google"
+            onSuccess={(response) => responseGoogle(response)}
+            onFailure={(response) => responseGoogle(response)}
+            cookiePolicy={'single_host_origin'}
+            render={(renderProps) => (
+              <IconButton startIcon={<GoogleIcon color="error" />} onClick={renderProps.onClick}>
+                Sign In Google
+              </IconButton>
+            )}
+          />
+
+          {/* <IconButton startIcon={<GoogleIcon color="error" />}>
             Sign In Google
-          </IconButton>
+          </IconButton> */}
           <Link to="/forgot-password">
             <Typography style={{
               textAlign: 'center'

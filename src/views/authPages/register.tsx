@@ -38,6 +38,9 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER_MUTATION } from "../../query";
 import client from "../../applo";
+import { GoogleLogin, GoogleLoginResponse } from 'react-google-login';
+
+
 type RegisterProps = {
   /** This is used if user registered via CV generation page */
   viaCV?: boolean;
@@ -51,45 +54,45 @@ const RegisterPage: FC<RegisterProps> = ({ viaCV, defaults, details }) => {
     type: DATA_USER_TYPES[0].id,
     ...defaults,
   });
-  const [registerUser,{data,error}] = useMutation(REGISTER_USER_MUTATION,{
-    client:client
+  const [registerUser, { data, error }] = useMutation(REGISTER_USER_MUTATION, {
+    client: client
   })
   const { addSnack } = useSnackbar();
   // const { code } = useLanguage();
   const navigate = useNavigate();
   // const { logout } = useAuthentication();
-  
+
   const updateCredentials =
     (name: string, validate: InputField["validator"]) =>
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.target;
+      (e: ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
 
-      setCredentials((prev) => ({
-        ...prev,
-        [name]: validate?.(value) ? value : Errors.INPUT_ERROR,
-      }));
-    };
-    
+        setCredentials((prev) => ({
+          ...prev,
+          [name]: validate?.(value) ? value : Errors.INPUT_ERROR,
+        }));
+      };
+
   const submit = async () => {
-   
+
     try {
-     
-   
+
+
       const { data } = await registerUser({
         variables: {
-          email:credentials?.email,
-          displayname:credentials?.full_name,
-          password:credentials?.password
+          email: credentials?.email,
+          displayname: credentials?.full_name,
+          password: credentials?.password
         },
       });
 
 
       // Handle successful registration, e.g., show a success message or redirect
-    
+
 
       if (data) {
-      
-        localStorage.setItem("user",JSON.stringify(data.registerUser))
+
+        localStorage.setItem("user", JSON.stringify(data.registerUser))
         addSnack?.({
           severity: "success",
           message: "You've successfully registered",
@@ -105,6 +108,27 @@ const RegisterPage: FC<RegisterProps> = ({ viaCV, defaults, details }) => {
       });
     }
   };
+
+  const handleGoogleLoginSuccess = (response: GoogleLoginResponse | any) => {
+    try {
+      const { tokenId, profileObj } = response as GoogleLoginResponse;
+      // Perform any necessary actions with the user data (e.g., register the user)
+    } catch (error) {
+      console.error('Google login error:', error);
+    }
+  };
+
+  const handleGoogleLoginFailure = (response: GoogleLoginResponse) => {
+    console.error('Google login failed:', response);
+    // Handle failure (e.g., show an error message)
+  };
+
+  const responseGoogle = (response: any) => {
+    console.log(response);
+    // Handle Google authentication response here
+  };
+  
+
   return (
     <>
       <Typography variant="h1" style={{
@@ -112,14 +136,14 @@ const RegisterPage: FC<RegisterProps> = ({ viaCV, defaults, details }) => {
       }}>Register</Typography>
 
       <Stack spacing={4} className="content">
-      {getInputs(credentials).map((input) => {
+        {getInputs(credentials).map((input) => {
           const hasError = credentials?.[input.name] === Errors.INPUT_ERROR;
           const Input = input.CustomComponent ?? TextField;
           return (
             <Input
-            style={{
-              margin:20
-            }}
+              style={{
+                margin: 20
+              }}
               {...input.props}
               error={hasError}
               name={input.name}
@@ -133,24 +157,50 @@ const RegisterPage: FC<RegisterProps> = ({ viaCV, defaults, details }) => {
         })}
 
         <Stack className="bottom_section" spacing={2}>
-          <SubmitButton onClick={() =>{
+          <SubmitButton onClick={() => {
             submit()
           }}>Register</SubmitButton>
-          <IconButton startIcon={<FacebookIcon color="info"/>} >
-             Sign Up Facebook
+          <IconButton startIcon={<FacebookIcon color="info" />} >
+            Sign Up Facebook
           </IconButton>
-          <IconButton startIcon={<GoogleIcon color="error"/>}>
-             Sign Up Google
-          </IconButton>
+          {/* <IconButton startIcon={<GoogleIcon color="error" />}>
+            Sign Up Google
+          </IconButton> */}
 
-         
-            <Stack direction="row" spacing={1}>
-              <Typography color="secondary">Already Registered?</Typography>
-              <Link to="/login">
-                <Typography className="link">Login</Typography>
-              </Link>
-            </Stack>
-          
+          {/* <GoogleLogin
+            clientId="YOUR_GOOGLE_API_KEY"
+            buttonText="Sign Up with Google"
+            onSuccess={(response: GoogleLoginResponse) => handleGoogleLoginSuccess(response)}
+            onFailure={(error: GoogleLoginResponse) => handleGoogleLoginFailure(error)}
+            cookiePolicy={'single_host_origin'}
+            render={(renderProps) => (
+              <IconButton startIcon={<GoogleIcon color="error" />}>
+                Sign Up Google
+              </IconButton>
+            )}
+          /> */}
+          <GoogleLogin
+            clientId="GOOGLE_CLIENT_ID"
+            buttonText="Sign In with Google"
+            onSuccess={(response) => responseGoogle(response)}
+            onFailure={(response) => responseGoogle(response)}
+            cookiePolicy={'single_host_origin'}
+            render={(renderProps) => (
+              <IconButton startIcon={<GoogleIcon color="error" />} onClick={renderProps.onClick}>
+                Sign Up Google
+              </IconButton>
+            )}
+          />
+
+
+
+          <Stack direction="row" spacing={1}>
+            <Typography color="secondary">Already Registered?</Typography>
+            <Link to="/login">
+              <Typography className="link">Login</Typography>
+            </Link>
+          </Stack>
+
         </Stack>
       </Stack>
     </>
